@@ -1,3 +1,4 @@
+/** FEEDBACK: Overall super proud on all you were able to accomplish! Great job! I also gave you some pointers if you want to attempt to add a random number again! */
 // These are your event handlers 
 const button = document.getElementById('click-button')
 const clickCounterHandler = () => {
@@ -52,13 +53,15 @@ const removeDelListener = () => {
   delegation.removeEventListener('click', handleDelegation)
 }
 
-
+/** FEEDBACK: Highlight this function, is this function being called anywhere? When should it be called? */
 const addNewRandomNumber = () => {
   const randomNum = document.querySelector('#add-random-num')
   const randomNumUL = document.querySelector('#random-numbers')
 
   const li = document.createElement('li')
-  const randomNumberGenerator = Math.floor(Math.random() * 100)
+  /** FEEDBACK: Add 1 so that you do not any numbers below 1! */
+  const randomNumberGenerator = Math.floor(Math.random() * 100) + 1
+  /** FEEDBACK: This should be .textContent rather than .innerText! */
   li.innerText = randomNumberGenerator
   randomNumUL.append(li)
 };
@@ -79,6 +82,7 @@ const main = () => {
 
   removeButton.addEventListener('click', removeDelListener)
 
+  /** HINT: What event listener is missing here so that you can add a random number on click? */
 };
 
 main();
